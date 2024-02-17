@@ -1,0 +1,109 @@
+
+
+/* General page styles*/
+    body {
+        margin: 0;
+    }
+
+    html {
+        font-family: 'Helvetica neue', Arial, 'sans serif';
+        font-size: 10px;
+        background-color: #ccc;
+    }  
+
+    h2, p{
+        margin: 0em;
+    }
+
+    h2{
+        font-size: 2em;
+        line-height: 1.5em;
+    }
+
+/* Card container */
+    .card{
+        width: 35em;
+        height: 22em;
+        margin: 5em auto;
+        background-color: red;
+        border: 0.2em solid black;
+        border-radius: 1.5em;
+    }
+    .card2{
+        width: 35em;
+        height: 22em;
+        margin: 5em auto;
+        background-color: lightblue;
+        border: 0.2em solid black;
+        border-radius: 1.5em;
+    }
+
+/* Header and footer styles */
+    .card-header{
+        background: linear-gradient(to top, darkred, red);
+        border-radius: 1.5em 1.5em 0 0;
+    }
+    .card-header2{
+        background: linear-gradient(to top, darkblue, lightblue);
+        border-radius: 1.5em 1.5em 0 0;
+        font-family: "Lucida Console"
+    }
+
+    .card-footer{
+        background: linear-gradient(to bottom, darkred, red);
+        border-radius: 0 0 1.5em 1.5em;
+    }
+
+    .card-footer2{
+        background: linear-gradient(to bottom, darkblue, lightblue);
+        border-radius: 0 0 1.5em 1.5em;
+    }
+
+    .card-header, .card-footer, .card-header2, .card-footer2{
+        height: 3em;
+        padding: 1em 1em 1em 1em;
+    }
+
+    .card-footer p{
+        font-size: 1.5em;
+        line-height: 1.25em;
+    }
+
+    .card-footer2 p{
+        font-size: 1.5em;
+        line-height: 1.25em;
+    }
+
+/* Main business card contents*/
+    article{
+        height: 12em;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .article2{
+        height: 120px;
+        background-color: lightblue;
+    }
+
+    .card-article-img{
+        max-height: 100%;
+        float: right;
+    }
+
+    .card-article2-img{
+        max-height: 100%;
+        float: right;
+    }
+
+    article p{
+        color: white;
+        padding: 10px;
+        line-height: 12px;
+    }
+
+    .article2 p{
+        color: black;
+        padding: 18px;
+        line-height: 12px;
+        font-family: "Lucida Console"
+    }
