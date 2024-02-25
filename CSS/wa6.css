@@ -1,0 +1,41 @@
+.drink img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40em;
+}
+
+.drink .overlayimg {
+    position: absolute;
+    top: 20em;
+    left: 20em;
+    height: 15em;
+    filter: drop-shadow(3px 3px 3px black);
+}
+
+.drink .overlay {
+    width: 15em;
+    height: 15em;
+    margin: 5em auto;
+    background-color: hotpink;
+    border-radius: 1.5em;
+    position: absolute;
+    top: 0em;
+    left: 21em;
+}
+
+.drink .overlay .title {
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 40px;
+    padding: 0.3em;
+    padding-top: 10%;
+}
+
+.drink .overlay .description {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    line-height: 20px;
+    margin: 1em;
+}
