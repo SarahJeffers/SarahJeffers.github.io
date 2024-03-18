@@ -1,0 +1,158 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; 
+    color: black; 
+}
+
+.header {
+    background: linear-gradient(to top, #171f69, #C0C0C0); /* Gradient from royal blue to silver */
+    color: white; 
+    padding: 20px;
+    text-align: center;
+    font-family: 'Bookman', 'URW Bookman L', serif;
+}
+
+
+.header h1 {
+    margin-top: 0;
+    font-size: 40px; 
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.header h2 {
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: 'Bookman', 'URW Bookman L', sans-serif;
+}
+
+.page-description {
+    background-color: #171f69; /* Royal blue background */
+    padding: 40px 80px; /* Thick padding on the sides */
+    margin-bottom: 20px;
+    padding-top: 20px;
+    color: white; 
+}
+
+
+/* Event Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-gap: 30px; /* Increase padding between events */
+}
+
+
+.event {
+    background-color: #fff;
+    color: black;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(23, 31, 105, 0.5); /* Royal blue drop shadow */
+    cursor: pointer;
+}
+
+.event:hover {
+    transform: translateY(-5px); /* Responsive animation to hover on event */
+}
+
+.event-thumbnail {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    background: linear-gradient(to right, #171f69 70%, #C0C0C0); 
+    color: white; 
+}
+
+.event-details {
+    padding: 20px;
+    display: none;
+    background-color: #fff; 
+    color: black; 
+}
+
+.event-details h3 {
+    font-family: 'Bookman', 'URW Bookman L', serif; 
+    margin-top: 20px;
+    margin-bottom: 5px; 
+}
+
+.event-details ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0; 
+    margin-bottom: 30px;
+}
+
+
+/* Checkbox Hack for Expand/Collapse */
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ .event .event-details {
+    display: block;
+}
+
+.event-thumbnail h2 {
+    margin-top: 0;
+    font-family: 'Bookman', 'URW Bookman L', serif; 
+}
+
+.event-thumbnail time {
+    color: #fff; 
+    font-family: 'Bookman', 'URW Bookman L', sans-serif;
+}
+
+.event-details p {
+    margin: 10px 0;
+    font-family: 'Bookman', 'URW Bookman L', sans-serif;
+    text-indent: 25px;
+}
+
+/* List Styles */
+.event-details h3 {
+    font-family: 'Bookman', 'URW Bookman L', serif; 
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.event-details ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.event-details ul li {
+    font-family: 'Bookman', 'URW Bookman L', sans-serif;
+    margin-bottom: 5px;
+}
+
+.tab { margin-left: 40px; }
+
+/* Media Queries */
+
+@media (min-width: 401px) and (max-width: 1500px) {
+    .page-description {
+        padding: 40px; /* Smaller padding on mobile */
+    }
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* Two events per row on screens up to 1500px wide */
+    }
+}
+
+@media (max-width: 400px) {
+    .page-description {
+        padding: 40px; /* Smaller padding on mobile */
+    }
+    .container {
+        grid-template-columns: repeat(1, 1fr); /* One event per row on screens 400px wide or less */
+    }
+}
+
+
+

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Listing</title>
+<style>
+    /* Base Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff; /* White background */
+        color: black; /* Black text */
+    }
+
+    .header {
+        background: linear-gradient(to top, #171f69, #C0C0C0); /* Gradient from royal blue to silver */
+        color: white; /* Text color */
+        padding: 20px;
+        text-align: center;
+        font-family: 'Bookman', 'URW Bookman L', serif;
+    }
+
+
+    .header h1 {
+        margin-top: 0;
+        font-size: 36px; /* Larger font size for the page title */
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+
+    .header h2 {
+        font-size: 18px;
+        font-style: italic;
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-family: 'Bookman', 'URW Bookman L', sans-serif;
+    }
+
+    .page-description {
+        padding: 40px 80px; /* Thick padding on the sides */
+        background-color: #171f69; /* Royal blue background */
+        /* border-radius: 5px; Remove rounded corners */
+        margin-bottom: 20px;
+        color: white; /* White text */
+    }
+
+
+    /* Event Styles */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 20px;
+    }
+
+    .event {
+        background-color: #fff; /* White background behind event boxes */
+        color: black; /* Black text */
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(23, 31, 105, 0.5); /* Royal blue drop shadow */
+        cursor: pointer;
+    }
+
+    .event:hover {
+        transform: translateY(-5px);
+    }
+
+    .event-thumbnail {
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+        background: linear-gradient(to right, #171f69 70%, #C0C0C0); /* Gradient from royal blue to silver */
+        color: white; /* White text */
+    }
+
+    .event-details {
+        padding: 20px;
+        display: none;
+        background-color: #fff; /* White background */
+        color: black; /* Black text */
+    }
+
+    .event-details h3 {
+        font-family: 'Bookman', 'URW Bookman L', serif; /* Change font family */
+        margin-top: 20px;
+        margin-bottom: 5px; /* Reduced margin */
+    }
+    
+    .event-details ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-top: 0; /* Remove margin above unnumbered lists */
+        margin-bottom: 30px;
+    }
+
+
+    /* Checkbox Hack for Expand/Collapse */
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked ~ .event .event-details {
+        display: block;
+    }
+
+    .event-thumbnail h2 {
+        margin-top: 0;
+        font-family: 'Bookman', 'URW Bookman L', serif; /* Change font family */
+    }
+
+    .event-thumbnail time {
+        color: #fff; /* White text */
+    }
+
+    .event-details p {
+        margin: 10px 0;
+        font-family: 'Bookman', 'URW Bookman L', sans-serif;
+    }
+
+    /* List Styles */
+    .event-details h3 {
+        font-family: 'Bookman', 'URW Bookman L', serif; /* Change font family */
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .event-details ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .event-details ul li {
+        font-family: 'Bookman', 'URW Bookman L', sans-serif;
+        margin-bottom: 5px;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+        .container {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        .page-description {
+            padding: 40px; /* Smaller padding on mobile */
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Colorado Symphony Classics 2022-2023</h1>
+    <h2>Our 2022/23 Season promises to be an imaginative and spectacular journey through some of the best music ever composed.</h2>
+</div>
+
+<div class="page-description">
+    <p>We're delighted to present to you a season brimming with extraordinary talent and exciting repertoire that we hope will ignite your imagination. The Colorado Symphony is committed to bringing the best in live, symphonic music to an eclectic and ever-growing audience, and we're well positioned to embark on an exciting path forward in the years to come.</p>
+</div>
+
+<div class="container">
+    <div class="event-container">
+        <input type="checkbox" id="event1-toggle" class="toggle">
+        <div class="event">
+            <label for="event1-toggle">
+                <div class="event-thumbnail">
+                    <h2>Event 1</h2>
+                    <time datetime="2024-01-01">Date: January 1, 2024</time>
+                </div>
+                <div class="event-details">
+                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis mi, convallis in magna id, blandit tempus odio.</p>
+                    <h3>Featured Artists</h3>
+                    <ul>
+                        <li>Artist 1</li>
+                        <li>Artist 2</li>
+                    </ul>
+                    <h3>Repertoire</h3>
+                    <ul>
+                        <li>Repertoire 1</li>
+                        <li>Repertoire 2</li>
+                    </ul>
+                </div>
+            </label>
+        </div>
+    </div>
+    
+    <!-- Add more events -->
+    <div class="event-container">
+        <input type="checkbox" id="event2-toggle" class="toggle">
+        <div class="event">
+            <label for="event2-toggle">
+                <div class="event-thumbnail">
+                    <h2>Event 2</h2>
+                    <time datetime="2024-02-01">Date: February 1, 2024</time>
+                </div>
+                <div class="event-details">
+                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis mi, convallis in magna id, blandit tempus odio.</p>
+                    <h3>Featured Artists</h3>
+                    <ul>
+                        <li>Artist 1</li>
+                        <li>Artist 2</li>
+                    </ul>
+                    <h3>Repertoire</h3>
+                    <ul>
+                        <li>Repertoire 1</li>
+                        <li>Repertoire 2</li>
+                    </ul>
+                </div>
+            </label>
+        </div>
+    </div>
+    <!-- Repeat this structure for additional events -->
+</div>
+
+</body>
+</html>
