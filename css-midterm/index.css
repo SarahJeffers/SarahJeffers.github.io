@@ -42,10 +42,12 @@ body {
 /* Event Styles */
 .container {
     max-width: 1200px;
+    min-width: 300;
     margin: 0 auto;
     padding: 20px;
     display: grid;
-    grid-gap: 30px; /* Increase padding between events */
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 
@@ -140,36 +142,14 @@ input[type="checkbox"]:checked ~ .event .event-details {
     .page-description {
         padding: 40px; /* Smaller padding on mobile */
     }
-    .container {
-        grid-template-columns: repeat(2, 1fr); /* Two events per row on screens up to 1500px wide */
-    }
 }
 
 @media (max-width: 400px) {
     .page-description {
         padding: 40px; /* Smaller padding on mobile */
     }
-    .container {
-        grid-template-columns: repeat(1, 1fr); /* One event per row on screens 400px wide or less */
+    body .container {
+        grid-template-columns: repeat(1, 1fr) !important; /* Two events per row on screens up to 1500px wide */
     }
 }
 
-
-
-
-.container {
-    display: grid !important;
-    grid-gap: 30px; /* Increase padding between events */
-}
-
-@media (min-width: 401px) and (max-width: 1500px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr) !important; /* Two events per row on screens up to 1500px wide */
-    }
-}
-
-@media (max-width: 400px) {
-    .container {
-        grid-template-columns: repeat(1, 1fr) !important; /* One event per row on screens 400px wide or less */
-    }
-}
