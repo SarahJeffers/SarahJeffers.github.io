@@ -1,3 +1,15 @@
+/* Initially hide the event details */
+.event-details {
+    display: none;
+}
+
+/* Show event details when the associated checkbox is checked */
+.toggle:checked + .event .event-details {
+    display: block;
+}
+
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -13,7 +25,6 @@ body {
     text-align: center;
     font-family: 'Bookman', 'URW Bookman L', serif;
 }
-
 
 .header h1 {
     margin-top: 0;
@@ -32,9 +43,8 @@ body {
 
 .page-description {
     background-color: #171f69; /* Royal blue background */
-    padding: 40px 80px; /* Thick padding on the sides */
     margin-bottom: 20px;
-    padding-top: 20px;
+    padding: 20px;
     color: white; 
 }
 
@@ -42,12 +52,12 @@ body {
 /* Event Styles */
 .container {
     max-width: 1200px;
-    min-width: 300;
+    min-width: 300px;
     margin: 0 auto;
     padding: 20px;
     display: grid;
     grid-gap: 30px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
 }
 
 
@@ -117,6 +127,7 @@ input[type="checkbox"]:checked ~ .event .event-details {
     text-indent: 25px;
 }
 
+
 /* List Styles */
 .event-details h3 {
     font-family: 'Bookman', 'URW Bookman L', serif; 
@@ -136,20 +147,22 @@ input[type="checkbox"]:checked ~ .event .event-details {
 
 .tab { margin-left: 40px; }
 
+
 /* Media Queries */
 
-@media (min-width: 401px) and (max-width: 1500px) {
+@media (min-width: 401px) {
     .page-description {
-        padding: 40px; /* Smaller padding on mobile */
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* two events per row on desktop */
     }
 }
 
 @media (max-width: 400px) {
     .page-description {
-        padding: 40px; /* Smaller padding on mobile */
-    }
-    body .container {
-        grid-template-columns: repeat(1, 1fr) !important; /* Two events per row on screens up to 1500px wide */
+        padding-left: 40px; /* Smaller padding on mobile */
+        padding-right: 40px;
     }
 }
-
