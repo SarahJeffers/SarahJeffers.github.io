@@ -55,7 +55,6 @@ body {
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(23, 31, 105, 0.5); /* Royal blue drop shadow */
-    cursor: pointer;
 }
 
 .event:hover {
