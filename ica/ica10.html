@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="name">Click the button to update name.</p>
+    <button type="button" id="updateButton">Update Name</button>
+    <button type="button" id="popupButton">Goodbye</button>
+
+    <script>
+        const updateButton = document.getElementById("updateButton");
+        const popupButton = document.getElementById("popupButton");
+
+        updateButton.addEventListener('click', runFunction);
+        popupButton.addEventListener('click', runPopupFunction);
+
+        function runFunction() {
+            const name = prompt("Please enter a name");
+            document.getElementById("name").textContent = "My name is " + name;
+        }
+
+        function runPopupFunction() {
+            alert("Have a nice day!");
+        }
+    </script>
+</body>
+</html>
