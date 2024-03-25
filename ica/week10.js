@@ -1,13 +1,13 @@
-const button = document.querySelector("button");
-button.addEventListener('click', runFunction);
+const updateButton = document.getElementById("updateButton");
+const popupButton = document.getElementById("popupButton");
+
+updateButton.addEventListener('click', runFunction);
+popupButton.addEventListener('click', runPopupFunction);
 
 function runFunction() {
     const name = prompt("Please enter a name");
-    button.textContent = "My name is" + name;
+    document.getElementById("name").textContent = "My name is " + name;
 }
-
-const popupButton = document.querySelector("popupButton");
-popupButton.addEventListener('click', runPopupFunction);
 
 function runPopupFunction() {
     alert("Have a nice day!");
