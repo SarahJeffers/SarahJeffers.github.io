@@ -7,6 +7,10 @@ h1 {
     text-align: center;
 }
 
+p {
+    max-width: 650px;
+}
+
 #quote-container {
     display: flex;
     flex-direction: column;

@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const quoteText = document.getElementById("quote-text");
-    const newQuoteBtn = document.getElementById("new-quote-btn");
     const charName = document.getElementById("character");
     const charAv = document.getElementById("character-avatar");
+    const newQuoteBtn = document.getElementById("new-quote-btn");
 
     // Function to fetch a random quote
     function fetchRandomQuote() {
