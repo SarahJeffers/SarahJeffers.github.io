@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="cover-border"></div> <!-- New element for the gradient border -->
+    <a href="https://www.youtube.com/watch?v=ql_u3Z4E9pY" target="_blank">
+      <img src="cover.png" alt="Tic Tac Toe Cover Image" class="cover-image">
+    </a>
+  </div>
+  <div class="button-container">
+    <img src="play.png" alt="Play Music" id="playButton" class="icon-button" onclick="togglePlayback()">
+    <img src="pause.png" alt="Pause Music" id="pauseButton" class="icon-button" onclick="togglePlayback()">
+  </div>
+  
+  <div class="container">
+    <div class="content">
+      <h1>Volume Tic Tac Toe</h1>
+      <p>You are player X. Win rounds to increase the song volume.<br>Score resets to zero if a round is lost to the computer.</p>
+      <div class="difficulty-container">
+        <label for="difficulty"><p>Select Difficulty:</p></label>
+        <select id="difficulty">
+          <option value="baby">I'm a little stupid whiny baby</option>
+          <option value="hard" selected>I have confidence that I can beat a computer</option>
+          <option value="extra-hard">Computers should fear me</option>
+        </select>
+      </div>      
+      <div id="board">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div id="status">Player X's turn</div>
+      <div> <p>Score:</p> <span id="scoreValue">0</span></div>
+      <button id="resetButton">Reset Game</button>
+    </div>
+  </div>
+
+  <audio id="bgMusic" src="song.mp3" preload="auto" loop volume="0.5"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
