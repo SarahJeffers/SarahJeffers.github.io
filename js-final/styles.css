@@ -152,12 +152,12 @@ p,
 
 /* Styling the volume control icons */
 .volume-icon {
-  width: 5%;
+  width: 50px;
 }
 
 /* Styling the volume control icons */
 .volume-control-icon {
-  width: 3%;
+  width: 30px;
   cursor: pointer;
   position: absolute;
   top: 50%;
