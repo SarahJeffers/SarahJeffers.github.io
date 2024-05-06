@@ -4,32 +4,33 @@
   padding: 0;
 }
 
-/* Setting the page background to dark gray */
+/* Setting the page background to dark gray and text color to white */
 body {
   background-color: #333;
   color: white;
   font-family: Arial, sans-serif;
 }
 
-/* Increase title size */
+/* Increase title size and add some margin */
 h1 {
   font-size: 40px;
   margin: 10px;
 }
 
-/* Increase score/turn text size */
+/* Increase score/turn text size and add line-height */
 #status,
 p,
 #scoreValue {
   font-size: 24px;
   margin: 5px;
+  line-height: 1.5;
 }
 
 /* Styling the cover image */
 .cover-image {
   width: 30%;
   display: block;
-  margin: 30px auto;
+  margin: 50px auto;
   border: 5px solid white;
 }
 
@@ -37,8 +38,7 @@ p,
 .button-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  margin: 50px 0; /* Shortened margin */
 }
 
 /* Styling the icon buttons */
@@ -107,4 +107,76 @@ p,
   right: 10px;
   transform: translateY(-50%);
   pointer-events: none;
+}
+
+/* Styling the progress bar container */
+.progress-bar-container {
+  width: 30%;
+  margin: 50px auto; /* Adjusted margin */
+  height: 10px;
+  background-color: #777;
+  cursor: pointer;
+}
+
+/* Styling the progress bar */
+#progressBar {
+  height: 100%;
+  background-color: white;
+}
+
+/* Style for progress text elements */
+.progress-text-left,
+.progress-text-right {
+  position: absolute;
+  color: white;
+  font-size: 15px;
+}
+
+.progress-text-left {
+  left: 32%;
+}
+
+.progress-text-right {
+  right: 32%;
+}
+
+/* Styling the volume container */
+.volume-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0; /* Adjusted margin */
+  position: relative;
+  margin-bottom: 250px;
+}
+
+/* Styling the volume control icons */
+.volume-icon {
+  width: 5%;
+}
+
+/* Styling the volume control icons */
+.volume-control-icon {
+  width: 3%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Position the minus icon to the left */
+#volumeMinus {
+  left: 40%;
+}
+
+/* Position the plus icon to the right */
+#volumePlus {
+  right: 40%;
+}
+
+/* Styling the volume percentage */
+.volume-percentage {
+  font-size: 50px;
+  color: white;
+  margin-left: 15px;
 }

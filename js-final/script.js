@@ -1,3 +1,40 @@
+// Define isPlaying variable in the global scope
+let isPlaying = false;
+
+// Define updateProgressBar function
+function updateProgressBar() {
+  const currentTime = bgMusic.currentTime;
+  const duration = bgMusic.duration;
+  const progress = (currentTime / duration) * 100;
+  progressBar.style.width = progress + '%';
+}
+
+// Define playMusic function
+function playMusic() {
+  bgMusic.play();
+  isPlaying = true;
+  playButton.src = "playing.png";
+  pauseButton.src = "pause.png";
+  updateProgressBar(); // Update progress bar when music starts playing
+}
+
+// Define pauseMusic function
+function pauseMusic() {
+  bgMusic.pause();
+  isPlaying = false;
+  playButton.src = "play.png";
+  pauseButton.src = "paused.png";
+}
+
+// Define togglePlayback function
+window.togglePlayback = function() {
+  if (!isPlaying) {
+    playMusic();
+  } else {
+    pauseMusic();
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   const cells = document.querySelectorAll('.cell');
   const status = document.getElementById('status');
@@ -5,6 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const resetButton = document.getElementById('resetButton');
   const playButton = document.getElementById('playButton');
   const pauseButton = document.getElementById('pauseButton');
+  const progressBar = document.getElementById('progressBar'); // Get the progress bar element
+  const progressBarContainer = document.querySelector('.progress-bar-container');
   const bgMusic = document.getElementById('bgMusic');
   const difficultySelector = document.getElementById('difficulty');
 
@@ -19,8 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     resetGame();
   });
 
-  playButton.addEventListener('click', togglePlayback);
-  pauseButton.addEventListener('click', pauseMusic);
+
 
   function togglePlayback() {
     if (!isPlaying) {
@@ -29,12 +67,15 @@ document.addEventListener('DOMContentLoaded', function() {
       pauseMusic();
     }
   }
+  playButton.addEventListener('click', togglePlayback);
+  pauseButton.addEventListener('click', togglePlayback);
 
   function playMusic() {
     bgMusic.play();
     isPlaying = true;
     playButton.src = "playing.png";
     pauseButton.src = "pause.png";
+    updateProgressBar(); // Update progress bar when music starts playing
   }
 
   function pauseMusic() {
@@ -43,6 +84,28 @@ document.addEventListener('DOMContentLoaded', function() {
     playButton.src = "play.png";
     pauseButton.src = "paused.png";
   }
+
+  bgMusic.addEventListener('timeupdate', updateProgressBar); // Update progress bar as the song plays
+
+  function updateProgressBar() {
+    const currentTime = bgMusic.currentTime;
+    const duration = bgMusic.duration;
+    const progress = (currentTime / duration) * 100;
+    progressBar.style.width = progress + '%';
+  }
+
+  // Add click event listener to the progress bar to skip to a specific time
+  // Add click event listener to the progress bar container to skip to a specific time
+  progressBarContainer.addEventListener('click', (event) => {
+    const clickX = event.clientX - progressBarContainer.getBoundingClientRect().left; // Get click position relative to the progress bar container
+    const progressBarWidth = progressBarContainer.clientWidth;
+    const skipTime = (clickX / progressBarWidth) * bgMusic.duration;
+    bgMusic.currentTime = skipTime;
+    updateProgressBar(); // Update progress bar after skipping
+  });
+
+
+
 
   cells.forEach(cell => {
     cell.addEventListener('click', handleCellClick);
@@ -209,4 +272,53 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   updateMusicVolume();
+
+  // Update progress text elements with elapsed time and total duration
+function updateProgressText() {
+  const currentTime = bgMusic.currentTime;
+  const duration = bgMusic.duration;
+  const currentTimeFormatted = formatTime(currentTime);
+  const durationFormatted = formatTime(duration);
+  document.querySelector('.progress-text-left').textContent = currentTimeFormatted;
+  document.querySelector('.progress-text-right').textContent = durationFormatted;
+}
+
+// Helper function to format time in MM:SS format
+function formatTime(time) {
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60);
+  return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+}
+
+// Call updateProgressText() in the timeupdate event listener
+bgMusic.addEventListener('timeupdate', () => {
+  updateProgressBar();
+  updateProgressText(); // Update progress text along with the progress bar
 });
+// Define a function to update the volume percentage text
+function updateVolumePercentage() {
+  const volumePercentage = Math.round(bgMusic.volume * 100); // Calculate volume percentage
+  document.querySelector('.volume-percentage').textContent = `${volumePercentage}%`; // Update text content
+}
+
+// Call updateVolumePercentage() whenever the volume changes
+bgMusic.addEventListener('volumechange', updateVolumePercentage);
+
+// Get the plus and minus buttons
+const volumeMinus = document.getElementById('volumeMinus');
+const volumePlus = document.getElementById('volumePlus');
+
+// Add click event listeners to the plus and minus buttons
+volumeMinus.addEventListener('click', () => {
+  // Scroll to the Tic Tac Toe board container with smooth behavior
+  document.getElementById('gameContainer').scrollIntoView({ behavior: 'smooth' });
+});
+
+volumePlus.addEventListener('click', () => {
+  // Scroll to the Tic Tac Toe board container with smooth behavior
+  document.getElementById('gameContainer').scrollIntoView({ behavior: 'smooth' });
+});
+
+
+});
+
